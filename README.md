@@ -44,9 +44,9 @@ of ```if``` statements. The requirements dictate that the ```'Pling'``` concaten
 before ```'Plang'```. Knowing this, the decision to check using **modulo** could follow this order:
 
 ``` 
-pseudo: if (input modulo 3) append 'Pling'
-        if (input modulo 5) append 'Plang'
-        if (input modulo 7) append 'Plong'
+pseudo: if (input modulo 3 is 0) append 'Pling'
+        if (input modulo 5 is 0) append 'Plang'
+        if (input modulo 7 is 0) append 'Plong'
 ```
 
 No concrete conclusion can be derived from the requirements about the ```'Plong'``` concatenation order but one can assume the order is relative to the three factors in ascending order.
