@@ -37,4 +37,10 @@ public class RaindropsTest {
     void checkInput34ReturnsItselfAsString() {
         Assertions.assertEquals("34", raindrops.plingPlangPlong(34));
     }
+
+    @Test
+    @DisplayName("checkInput0ReturnsItselfAsString")
+    void checkInput0ReturnsItselfAsString() {
+        Assertions.assertEquals("0", raindrops.plingPlangPlong(0));
+    }
 }
