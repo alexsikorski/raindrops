@@ -23,7 +23,7 @@ public class RaindropsTests {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {5, -24})
+    @ValueSource(ints = {5, -25})
     @DisplayName("Check that numbers with only a factor of 5 return 'Plang'")
     void checkThatNumbersWithOnlyAFactorOf5ReturnPlang(int number) {
         Assertions.assertEquals("Plang", raindrops.plingPlangPlong(number));

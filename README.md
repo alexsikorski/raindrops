@@ -32,7 +32,7 @@ Initially, it was decided to create a table of inputs/outputs as to aid with cov
 |0|None|'0'|
 |-11|-1, 11|'-11'|
 |-3|-1, 3|'Pling'|
-|-24|-1, 2, 3, 4, 6, 8, 12, 24|'Plang'|
+|-25|-1, 5, 25|'Plang'|
 |-14|-1, 2, 7|'Plong'|
 |-30|-1, 2, 3, 5, 6, 10, 15, 30|'PlingPlang'|
 |-42|-1, 2, 3, 6, 7, 14, 21, 42|'PlingPlong'|
