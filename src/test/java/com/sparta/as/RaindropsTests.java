@@ -133,25 +133,38 @@ public class RaindropsTests {
         private static final int RANDOM_SAMPLE_SIZE = 10;
 
         @ParameterizedTest
-        @MethodSource("generateRandomIntsForFactor3")
+        @MethodSource("generateRandomIntsForPling")
         @DisplayName("Check plingPlangPlong method returns 'Pling' with random numbers of factor 3 ")
         void checkPlingPlangPlongMethodReturnsPlingWithRandomNumbersOfFactor3(int number) {
             Assertions.assertEquals(PLING, raindrops.plingPlangPlong(number));
         }
 
-        @Test
+        @ParameterizedTest
+        @MethodSource("generateRandomIntsForPlang")
         @DisplayName("Check plingPlangPlong method returns 'Plang' with random numbers of factor 5")
-        void checkPlingPlangPlongMethodReturnsPlangWithRandomNumbersOfFactor5() {
-
+        void checkPlingPlangPlongMethodReturnsPlangWithRandomNumbersOfFactor5(int number) {
+            Assertions.assertEquals(PLANG, raindrops.plingPlangPlong(number));
         }
 
-        @Test
+        @ParameterizedTest
+        @MethodSource("generateRandomIntsForPlong")
         @DisplayName("Check plingPlangPlong method returns 'Plong' with random numbers of factor 7")
-        void checkPlingPlangPlongMethodReturnsPlongWithRandomNumbersOfFactor7() {
+        void checkPlingPlangPlongMethodReturnsPlongWithRandomNumbersOfFactor7(int number) {
+            Assertions.assertEquals(PLONG, raindrops.plingPlangPlong(number));
         }
 
-        private int[] generateRandomIntsForFactor3() {
+
+
+        private int[] generateRandomIntsForPling() {
             return RandomIntArrayGenerator.generateRandomNumbersOfFactor(RANDOM_SAMPLE_SIZE, 3);
+        }
+
+        private int[] generateRandomIntsForPlang() {
+            return RandomIntArrayGenerator.generateRandomNumbersOfFactor(RANDOM_SAMPLE_SIZE, 5);
+        }
+
+        private int[] generateRandomIntsForPlong() {
+            return RandomIntArrayGenerator.generateRandomNumbersOfFactor(RANDOM_SAMPLE_SIZE, 7);
         }
     }
 }
