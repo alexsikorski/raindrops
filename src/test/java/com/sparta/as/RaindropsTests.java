@@ -37,16 +37,10 @@ public class RaindropsTests {
         Assertions.assertEquals("Plong", raindrops.plingPlangPlong(7));
     }
 
-
-    @Test
-    @DisplayName("checkInput34ReturnsItselfAsString")
-    void checkInput34ReturnsItselfAsString() {
-        Assertions.assertEquals("34", raindrops.plingPlangPlong(34));
-    }
-
-    @Test
-    @DisplayName("checkInput0ReturnsItselfAsString")
-    void checkInput0ReturnsItselfAsString() {
-        Assertions.assertEquals("0", raindrops.plingPlangPlong(0));
+    @ParameterizedTest
+    @ValueSource(ints = {34, 0})
+    @DisplayName("Check that numbers with no respective factors return themselves as a string")
+    void checkThatNumbersWithNoRespectiveFactorsReturnThemselvesAsAString(int number) {
+        Assertions.assertEquals("" + number + "", raindrops.plingPlangPlong(number));
     }
 }
