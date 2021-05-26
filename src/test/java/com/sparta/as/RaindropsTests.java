@@ -1,9 +1,6 @@
 package com.sparta.as;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -91,5 +88,13 @@ public class RaindropsTests {
         void checkIsPlingFactorReturnsPling(int number) {
             Assertions.assertEquals(PLING, raindrops.isPlingFactor(number));
         }
+
+        @ParameterizedTest
+        @ValueSource(ints = {5, -25})
+        @DisplayName("Check isPlangFactor returns 'Plang'")
+        void checkIsPlangFactorReturnsPlang(int number) {
+            Assertions.assertEquals(PLANG, raindrops.isPlangFactor(number));
+        }
+
     }
 }
