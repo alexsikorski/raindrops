@@ -34,7 +34,7 @@ public class RaindropsTests {
     @ValueSource(ints = {7})
     @DisplayName("Check that numbers with only a factor of 7 return 'Plong'")
     void checkThatNumbersWithOnlyAFactorOf7ReturnPlong(int number) {
-        Assertions.assertEquals("Plong", raindrops.plingPlangPlong(7));
+        Assertions.assertEquals("Plong", raindrops.plingPlangPlong(number));
     }
 
     @ParameterizedTest
@@ -42,5 +42,34 @@ public class RaindropsTests {
     @DisplayName("Check that numbers with no respective factors return themselves as a string")
     void checkThatNumbersWithNoRespectiveFactorsReturnThemselvesAsAString(int number) {
         Assertions.assertEquals("" + number + "", raindrops.plingPlangPlong(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {15})
+    @DisplayName("Check that numbers with a factor of 3 and 5 return 'PlingPlang'")
+    void checkThatNumbersWithAFactorOf3And5ReturnPlingPlang(int number) {
+        Assertions.assertEquals("PlingPlang", raindrops.plingPlangPlong(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {21})
+    @DisplayName("Check that numbers with a factor of 3 and 7 return 'PlingPlong'")
+    void checkThatNumbersWithAFactorOf3And7ReturnPlingPlong(int number) {
+        Assertions.assertEquals("PlingPlong", raindrops.plingPlangPlong(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {35})
+    @DisplayName("Check that numbers with a factor of 5 and 7 return 'PlangPlong'")
+    void checkThatNumbersWithAFactorOf5And7ReturnPlangPlong(int number) {
+        Assertions.assertEquals("PlangPlong", raindrops.plingPlangPlong(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {105})
+    @Test
+    @DisplayName("Check that numbers with a factor of 3, 5 and 7 return 'PlingPlangPlong'")
+    void checkThatNumbersWithAFactorOf35And7ReturnPlingPlangPlong(int number) {
+        Assertions.assertEquals("PlingPlangPlong", raindrops.plingPlangPlong(number));
     }
 }
