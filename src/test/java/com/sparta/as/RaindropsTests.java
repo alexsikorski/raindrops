@@ -30,7 +30,7 @@ public class RaindropsTests {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {7, -14})
+    @ValueSource(ints = {7, -14, 28})
     @DisplayName("Check that numbers with only a factor of 7 return 'Plong'")
     void checkThatNumbersWithOnlyAFactorOf7ReturnPlong(int number) {
         Assertions.assertEquals("Plong", raindrops.plingPlangPlong(number));
@@ -44,7 +44,7 @@ public class RaindropsTests {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {15, -30})
+    @ValueSource(ints = {15, -30, 30})
     @DisplayName("Check that numbers with a factor of 3 and 5 return 'PlingPlang'")
     void checkThatNumbersWithAFactorOf3And5ReturnPlingPlang(int number) {
         Assertions.assertEquals("PlingPlang", raindrops.plingPlangPlong(number));
