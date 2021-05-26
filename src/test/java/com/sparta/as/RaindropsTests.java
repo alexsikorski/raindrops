@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class RaindropsTests {
 
@@ -14,10 +16,11 @@ public class RaindropsTests {
         raindrops = new Raindrops();
     }
 
-    @Test
-    @DisplayName("checkInput3ReturnsPling")
-    void checkInput3ReturnsPling() {
-        Assertions.assertEquals("Pling", raindrops.plingPlangPlong(3));
+    @ParameterizedTest
+    @ValueSource(ints = {3})
+    @DisplayName("Check that numbers with only a factor of 3 return 'Pling'")
+    void checkThatNumbersWithOnlyAFactorOf3ReturnPling(int number) {
+        Assertions.assertEquals("Pling", raindrops.plingPlangPlong(number));
     }
 
     @Test
