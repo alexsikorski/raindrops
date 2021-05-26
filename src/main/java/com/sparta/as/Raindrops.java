@@ -3,7 +3,8 @@ package com.sparta.as;
 public class Raindrops {
 
     public String plingPlangPlong(int number) {
-        return null;
+        String output = isPlingFactor(number) + isPlangFactor(number) + isPlongFactor(number);
+        return output.isEmpty() ? "" + number + "" : output;
     }
 
     private String isPlingFactor(int number) {
