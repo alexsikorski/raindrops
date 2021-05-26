@@ -9,4 +9,9 @@ public class Raindrops {
     private String isPlingFactor(int number) {
         return number % 3 == 0 ? "Pling" : "";
     }
+
+    private String isPlangFactor(int number) {
+        return number % 5 == 0 ? "Plang" : "";
+    }
+
 }
