@@ -2,7 +2,10 @@ package com.sparta.as;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.Random;
 
 public class RaindropsTests {
 
@@ -119,6 +122,28 @@ public class RaindropsTests {
         @DisplayName("Check isPlongFactor returns empty string when 0 is an input")
         void checkIsPlongFactorReturnsEmptyStringWhen0IsAnInput() {
             Assertions.assertEquals("", raindrops.isPlongFactor(0));
+        }
+    }
+
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @Nested
+    @DisplayName("Randomised test cases for plingPlangPlong")
+    class randomisedPlingPlangPlongTests {
+
+        private static final int RANDOM_SAMPLE_SIZE = 10;
+
+        @ParameterizedTest
+        @MethodSource("generateRandomNumbersOfFactor3")
+        @DisplayName("Check plingPlangPlong method returns 'Pling' with random numbers of factor 3 ")
+        void checkPlingPlangPlongMethodReturnsPlingWithRandomNumbersOfFactor3(int number) {
+            Assertions.assertEquals(PLING, raindrops.plingPlangPlong(number));
+        }
+
+        private int[] generateRandomNumbersOfFactor3() {
+            return new Random().ints()
+                    .filter(n -> (n % 3) == 0 && (n % 5) != 0 && (n % 7) != 0)
+                    .limit(RANDOM_SAMPLE_SIZE)
+                    .toArray();
         }
     }
 }
