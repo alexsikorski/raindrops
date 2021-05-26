@@ -103,5 +103,22 @@ public class RaindropsTests {
             Assertions.assertEquals(PLONG, raindrops.isPlongFactor(number));
         }
 
+        @Test
+        @DisplayName("Check isPlingFactor returns empty string when 0 is an input")
+        void checkIsPlingFactorReturnsEmptystringWhen0IsAnInput() {
+            Assertions.assertEquals("", raindrops.isPlangFactor(0));
+        }
+
+        @Test
+        @DisplayName("Check isPlangFactor returns empty string when 0 is an input")
+        void checkIsPlangFactorReturnsEmptyStringWhen0IsAnInput() {
+            Assertions.assertEquals("", raindrops.isPlangFactor(0));
+        }
+
+        @Test
+        @DisplayName("Check isPlongFactor returns empty string when 0 is an input")
+        void checkIsPlongFactorReturnsEmptyStringWhen0IsAnInput() {
+            Assertions.assertEquals("", raindrops.isPlongFactor(0));
+        }
     }
 }
