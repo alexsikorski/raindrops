@@ -14,28 +14,56 @@ public class RandomIntArrayGenerator {
             switch (factor) {
                 case 3:
                     factor3 = true;
+                    break;
                 case 5:
                     factor5 = true;
+                    break;
                 case 7:
                     factor7 = true;
+                    break;
             }
         }
 
-        if (factor3) return new Random().ints()
+        // Pling
+        if (factor3 && !factor5 && !factor7) return new Random().ints()
                 .filter(n -> (n % 3) == 0 && (n % 5) != 0 && (n % 7) != 0)
                 .limit(size)
                 .toArray();
 
-        if (factor5) return new Random().ints()
+            // Plang
+        else if (!factor3 && factor5 && !factor7) return new Random().ints()
                 .filter(n -> (n % 3) != 0 && (n % 5) == 0 && (n % 7) != 0)
                 .limit(size)
                 .toArray();
 
-        if (factor7) return new Random().ints()
+            // Plong
+        else if (!factor3 && !factor5 && factor7) return new Random().ints()
                 .filter(n -> (n % 3) != 0 && (n % 5) != 0 && (n % 7) == 0)
                 .limit(size)
                 .toArray();
 
-        return null;
+            // PlingPlang
+        else if (factor3 && factor5 && !factor7) return new Random().ints()
+                .filter(n -> (n % 3) == 0 && (n % 5) == 0 && (n % 7) != 0)
+                .limit(size)
+                .toArray();
+
+            // PlingPlong
+        else if (factor3 && !factor5 && factor7) return new Random().ints()
+                .filter(n -> (n % 3) == 0 && (n % 5) != 0 && (n % 7) == 0)
+                .limit(size)
+                .toArray();
+
+            // PlangPlong
+        else if (!factor3 && factor5 && factor7) return new Random().ints()
+                .filter(n -> (n % 3) != 0 && (n % 5) == 0 && (n % 7) == 0)
+                .limit(size)
+                .toArray();
+
+            // PlingPlangPlong
+        else return new Random().ints()
+                    .filter(n -> (n % 3) == 0 && (n % 5) == 0 && (n % 7) == 0)
+                    .limit(size)
+                    .toArray();
     }
 }
