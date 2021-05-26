@@ -23,10 +23,11 @@ public class RaindropsTests {
         Assertions.assertEquals("Pling", raindrops.plingPlangPlong(number));
     }
 
-    @Test
-    @DisplayName("checkInput5ReturnsPlang")
-    void checkInput5ReturnsPlang() {
-        Assertions.assertEquals("Plang", raindrops.plingPlangPlong(5));
+    @ParameterizedTest
+    @ValueSource(ints = {5})
+    @DisplayName("Check that numbers with only a factor of 5 return 'Plang'")
+    void checkThatNumbersWithOnlyAFactorOf5ReturnPlang(int number) {
+        Assertions.assertEquals("Plang", raindrops.plingPlangPlong(number));
     }
 
     @Test
