@@ -125,7 +125,7 @@ public class RaindropsTests {
         }
     }
 
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
     @Nested
     @DisplayName("Randomised test cases for plingPlangPlong")
     class randomisedPlingPlangPlongTests {
@@ -133,17 +133,43 @@ public class RaindropsTests {
         private static final int RANDOM_SAMPLE_SIZE = 10;
 
         @ParameterizedTest
-        @MethodSource("generateRandomNumbersOfFactor3")
+        @MethodSource()
         @DisplayName("Check plingPlangPlong method returns 'Pling' with random numbers of factor 3 ")
         void checkPlingPlangPlongMethodReturnsPlingWithRandomNumbersOfFactor3(int number) {
             Assertions.assertEquals(PLING, raindrops.plingPlangPlong(number));
         }
 
-        private int[] generateRandomNumbersOfFactor3() {
-            return new Random().ints()
-                    .filter(n -> (n % 3) == 0 && (n % 5) != 0 && (n % 7) != 0)
-                    .limit(RANDOM_SAMPLE_SIZE)
-                    .toArray();
+        @Test
+        @DisplayName("Check plingPlangPlong method returns 'Plang' with random numbers of factor 5")
+        void checkPlingPlangPlongMethodReturnsPlangWithRandomNumbersOfFactor5() {
+            
+        }
+
+        @Test
+        @DisplayName("Check plingPlangPlong method returns 'Plong' with random numbers of factor 7")
+        void checkPlingPlangPlongMethodReturnsPlongWithRandomNumbersOfFactor7() {
+            
+        }
+
+        private int[] generateRandomNumbersOfFactor(int size, int factor) {
+            switch (factor){
+                case 3:
+                    return new Random().ints()
+                            .filter(n -> (n % 3) == 0 && (n % 5) != 0 && (n % 7) != 0)
+                            .limit(size)
+                            .toArray();
+                case 5:
+                    return new Random().ints()
+                            .filter(n -> (n % 3) != 0 && (n % 5) == 0 && (n % 7) != 0)
+                            .limit(size)
+                            .toArray();
+                case 7:
+                    return new Random().ints()
+                            .filter(n -> (n % 3) != 0 && (n % 5) != 0 && (n % 7) == 0)
+                            .limit(size)
+                            .toArray();
+            }
+            return null;
         }
     }
 }
