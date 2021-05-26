@@ -30,11 +30,13 @@ public class RaindropsTests {
         Assertions.assertEquals("Plang", raindrops.plingPlangPlong(number));
     }
 
-    @Test
-    @DisplayName("checkInput7ReturnsPlong")
-    void checkInput7ReturnsPlong() {
+    @ParameterizedTest
+    @ValueSource(ints = {7})
+    @DisplayName("Check that numbers with only a factor of 7 return 'Plong'")
+    void checkThatNumbersWithOnlyAFactorOf7ReturnPlong(int number) {
         Assertions.assertEquals("Plong", raindrops.plingPlangPlong(7));
     }
+
 
     @Test
     @DisplayName("checkInput34ReturnsItselfAsString")
