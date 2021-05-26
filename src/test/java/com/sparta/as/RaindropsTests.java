@@ -83,17 +83,24 @@ public class RaindropsTests {
     class isPlingPlangPlongMethodTests {
 
         @ParameterizedTest
-        @ValueSource(ints = {3, -3})
+        @ValueSource(ints = {699, -294})
         @DisplayName("check isPlingFactor returns 'Pling'")
         void checkIsPlingFactorReturnsPling(int number) {
             Assertions.assertEquals(PLING, raindrops.isPlingFactor(number));
         }
 
         @ParameterizedTest
-        @ValueSource(ints = {5, -25})
+        @ValueSource(ints = {170, -2835})
         @DisplayName("Check isPlangFactor returns 'Plang'")
         void checkIsPlangFactorReturnsPlang(int number) {
             Assertions.assertEquals(PLANG, raindrops.isPlangFactor(number));
+        }
+
+        @ParameterizedTest
+        @ValueSource(ints = {483, -2401})
+        @DisplayName("Check isPlongFactor returns 'Plong'")
+        void checkIsPlongFactorReturnsPlong(int number) {
+            Assertions.assertEquals(PLONG, raindrops.isPlongFactor(number));
         }
 
     }
