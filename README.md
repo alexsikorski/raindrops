@@ -2,6 +2,12 @@
 
 A small project developed with the intention of displaying programming, testing and git practice.
 
+## Technologies Used
+
+- JDK 11
+- JUnit 5.7
+- Cucumber 6.4
+
 ## Requirements
 
 Write a method that takes as its input a number (n) and converts it to a string, the contents of which depend on the
@@ -13,6 +19,8 @@ numbers factors
 - if the number does **not** have any of the above as a factor simply **return** the **numbers digits**
 
 ## Approach
+
+### Test Driven Development
 
 **TDD** (test driven development) had been used by creating the tests first. This ensures behaviour of to-be-written
 method(s) are/is consistent.
@@ -49,6 +57,13 @@ pseudo: if (input modulo 3 is 0) append 'Pling'
         if (input modulo 7 is 0) append 'Plong'
 ```
 
-No concrete conclusion can be derived from the requirements about the ```'Plong'``` concatenation order but one can assume the order is relative to the three factors in ascending order.
+No concrete conclusion can be derived from the requirements about the ```'Plong'``` concatenation order but one can
+assume the order is relative to the three factors in ascending order.
+
+### Behaviour Driven Development
+
+A **BDD** (behaviour driven development) approach had been implemented although not initially, it can still be used by
+future testers who can test the software using **gherkin syntax**. Essentially, this syntax allows non-technical testers
+to perform technical tests.
 
 ###### Authored by Alex Sikorski
