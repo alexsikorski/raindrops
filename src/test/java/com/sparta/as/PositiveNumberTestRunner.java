@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources",
         plugin = {"pretty", "html:target/plingplangplong_report.html"},
-        tags = "@ValidPositiveNumberTests"
+        tags = "@PositiveNumberTests"
 )
-public class ValidPositiveNumberTestRunner {
+public class PositiveNumberTestRunner {
 }
