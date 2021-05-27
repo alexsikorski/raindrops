@@ -5,6 +5,5 @@ Feature: Output 'Pling' 'Plang' 'Plong'
 
   Scenario: Using plingPlangPlong method with numbers that only have a factor of 7
     Given I create an instance of Raindrops
-    When I use the plingPlangPlong method
-    And I enter 7 as the input
+    When I use the plingPlangPlong method with the input 3
     Then I return "Pling"
