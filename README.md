@@ -29,23 +29,23 @@ Initially, it was decided to create a table of inputs/outputs as to aid with cov
 
 |Input |Factors |Output |
 --- | --- | ---
-|3|1, 3|'Pling'|
-|5|1, 5|'Plang'|
-|7|1, 7|'Plong'|
-|15|1, 3, 5, 15|'PlingPlang'|
-|21|1, 3 ,7|'PlingPlong'
-|35|1, 5, 7|'PlangPlong|
-|105|1, 3, 5, 7, 15, 21, 35, 105|'PlingPlangPlong|
+|3|1, **3**|'Pling'|
+|5|1, **5**|'Plang'|
+|7|1, **7**|'Plong'|
+|15|1, **3**, **5**, 15|'PlingPlang'|
+|21|1, **3** ,**7**|'PlingPlong'
+|35|1, **5**, **7**|'PlangPlong|
+|105|1, **3**, **5**, **7**, 15, 21, 35, 105|'PlingPlangPlong|
 |34|1, 2, 17, 34 |'34'|
 |0|None|'0'|
 |-11|-1, 11|'-11'|
-|-3|-1, 3|'Pling'|
-|-25|-1, 5, 25|'Plang'|
-|-14|-1, 2, 7|'Plong'|
-|-30|-1, 2, 3, 5, 6, 10, 15, 30|'PlingPlang'|
-|-42|-1, 2, 3, 6, 7, 14, 21, 42|'PlingPlong'|
-|-70|-1, 2, 5, 7, 14, 10, 35, 70|'PlangPlong'|
-|-210|-1, 2, 3, 5, 6, 7, 10, 14, 15, 21, 30, 35, 42, 70, 105, 210|'PlingPlangPlong'|
+|-3|-1, **3**|'Pling'|
+|-25|-1, **5**, 25|'Plang'|
+|-14|-1, 2, **7**|'Plong'|
+|-30|-1, 2, **3**, **5**, 6, 10, 15, 30|'PlingPlang'|
+|-42|-1, 2, **3**, 6, **7**, 14, 21, 42|'PlingPlong'|
+|-70|-1, 2, **5**, **7**, 14, 10, 35, 70|'PlangPlong'|
+|-210|-1, 2, **3**, **5**, 6, **7**, 10, 14, 15, 21, 30, 35, 42, 70, 105, 210|'PlingPlangPlong'|
 
 Depending on the implementation, it was noted that the output order would be determined by the sequential order
 of ```if``` statements. The requirements dictate that the ```'Pling'``` concatenation should be executed
